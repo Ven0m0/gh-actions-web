@@ -14,23 +14,33 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] ESLint configuration
 - [x] Memory bank documentation
 - [x] Recipe system for common features
+- [x] GitHub Actions web UI — trigger workflows, view run history
 
 ## Current Structure
 
 | File/Directory | Purpose | Status |
 |----------------|---------|--------|
-| `src/app/page.tsx` | Home page | ✅ Ready |
-| `src/app/layout.tsx` | Root layout | ✅ Ready |
-| `src/app/globals.css` | Global styles | ✅ Ready |
+| `src/app/page.tsx` | Main dashboard (client component) | ✅ Done |
+| `src/app/layout.tsx` | Root layout | ✅ Done |
+| `src/app/globals.css` | Global styles | ✅ Done |
+| `src/components/TriggerModal.tsx` | Workflow trigger modal | ✅ Done |
+| `src/lib/github.ts` | GitHub API TypeScript types | ✅ Done |
+| `src/app/api/github/check-token/route.ts` | Server-side token check | ✅ Done |
+| `src/app/api/github/user/route.ts` | Authenticated user info | ✅ Done |
+| `src/app/api/github/[owner]/[repo]/workflows/route.ts` | List workflows | ✅ Done |
+| `src/app/api/github/[owner]/[repo]/workflows/[workflow_id]/dispatch/route.ts` | Trigger dispatch | ✅ Done |
+| `src/app/api/github/[owner]/[repo]/workflows/[workflow_id]/runs/route.ts` | List runs | ✅ Done |
+| `src/app/api/github/[owner]/[repo]/branches/route.ts` | List branches | ✅ Done |
 | `.kilocode/` | AI context & recipes | ✅ Ready |
 
 ## Current Focus
 
-The template is ready. Next steps depend on user requirements:
-
-1. What type of application to build
-2. What features are needed
-3. Design/branding preferences
+The GitHub Actions web UI is complete. Features:
+- Enter a GitHub PAT token via UI or set `GITHUB_TOKEN` env var server-side
+- Load any repository by `owner/repo`
+- View all workflows with their current state and latest run status
+- Trigger `workflow_dispatch` events with branch selection and custom inputs
+- Expand each workflow card to see the last 10 run entries with status badges
 
 ## Quick Start Guide
 
@@ -85,3 +95,4 @@ export async function GET() {
 | Date | Changes |
 |------|---------|
 | Initial | Template created with base setup |
+| 2026-03-17 | Built GitHub Actions web UI — workflow list, dispatch trigger, run history |
