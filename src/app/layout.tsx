@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "A minimal Next.js starter template",
+  title: "GitHub Actions",
+  description: "Trigger GitHub Actions workflows from a web UI",
 };
 
 export default function RootLayout({
