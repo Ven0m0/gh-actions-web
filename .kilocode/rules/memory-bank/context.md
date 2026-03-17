@@ -31,6 +31,9 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 | `src/app/api/github/[owner]/[repo]/workflows/[workflow_id]/dispatch/route.ts` | Trigger dispatch | ✅ Done |
 | `src/app/api/github/[owner]/[repo]/workflows/[workflow_id]/runs/route.ts` | List runs | ✅ Done |
 | `src/app/api/github/[owner]/[repo]/branches/route.ts` | List branches | ✅ Done |
+| `docs/index.html` | GitHub Pages HTML | ✅ Done |
+| `docs/styles.css` | GitHub Pages CSS | ✅ Done |
+| `docs/app.js` | GitHub Pages JavaScript | ✅ Done |
 | `.kilocode/` | AI context & recipes | ✅ Ready |
 
 ## Current Focus
@@ -96,3 +99,4 @@ export async function GET() {
 |------|---------|
 | Initial | Template created with base setup |
 | 2026-03-17 | Built GitHub Actions web UI — workflow list, dispatch trigger, run history |
+| 2026-03-17 | Added GitHub Pages version in docs/ (static HTML/CSS/JS, no server) |
