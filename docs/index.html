@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Actions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="14.752 11.168 11.555 9.036 10 9.87 10 14.133 11.555 14.965 14.752 12.833 14.752 11.168"/>
+        </svg>
+      </div>
+      <span class="logo-text">GitHub Actions</span>
+      <div id="auth-status" class="auth-status"></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="token-section" class="card hidden">
+      <h2>Connect GitHub</h2>
+      <p>Create a Personal Access Token with <code>repo</code> and <code>workflow</code> scopes.</p>
+      <div class="input-row">
+        <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+        <button id="connect-btn">Connect</button>
+      </div>
+      <p id="token-error" class="error hidden"></p>
+    </section>
+
+    <section class="card">
+      <h2>Repository</h2>
+      <div class="input-row">
+        <input type="text" id="repo-input" placeholder="owner/repository">
+        <button id="load-btn">Load</button>
+      </div>
+      <p id="repo-error" class="error hidden"></p>
+    </section>
+
+    <section id="workflows-section" class="hidden">
+      <div class="section-header">
+        <h3 id="workflows-title">Workflows</h3>
+        <span id="workflows-count" class="count"></span>
+      </div>
+      <div id="workflows-list"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div>
+          <h2>Run workflow</h2>
+          <p id="modal-filename" class="mono"></p>
+        </div>
+        <button class="close-btn" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
